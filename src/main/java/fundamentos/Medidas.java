@@ -24,6 +24,7 @@ public class Medidas {
       System.out.println("(5) - Tabuada");
       System.out.println("(6) - Fibonacci");
       System.out.println("(7) - Contagem Regressiva");
+      System.out.println("(8) - Divisao por zero - Try/Catch");
       System.out.println("(S) - Sair");
 
       opcao = entrada.nextLine(); // leitura da opção
@@ -53,6 +54,8 @@ public class Medidas {
           case "s":
               System.out.println("Agradecemos pela preferencia! Fui!!");
               break;
+          case "8":
+              divisaoPorZero();
           default:
               System.out.println("Valor Invalido: " + opcao);
       }
@@ -157,6 +160,26 @@ public class Medidas {
         for(int i = numero;i >= 1;i -= decrescimo){
 
             System.out.println(i);
+        }
+    }
+
+    public static void divisaoPorZero(){
+
+        try {
+        System.out.println("Qual e o dividendo? (Numero a ser divido) ");
+        float dividendo = entrada.nextFloat();
+        System.out.println("Qual e o divisor? (Numero que vai dividir o dividendo) ");
+        float divisor = entrada.nextFloat();
+
+            System.out.println("O resultado e: " + dividendo / divisor);
+        }
+        catch(Exception e){
+
+            System.out.println("Não e possivel dividir por zero - Erro: " + e.getMessage());
+        }
+
+        finally {
+            System.out.println("Por hoje e so pessoal!!");
         }
     }
 }
